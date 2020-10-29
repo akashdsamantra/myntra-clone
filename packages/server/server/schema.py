@@ -1,7 +1,7 @@
 import graphene
 from graphene_django import DjangoObjectType
 
-from .myauth.models import User, OTP
+from myauth.models import User, OTP
 
 class UserType(DjangoObjectType):
     class Meta:
@@ -11,7 +11,7 @@ class UserType(DjangoObjectType):
 class OTPType(DjangoObjectType):
     class Meta:
         model = OTP
-        fields = ('id', 'user', 'email', 'mobile', 'code', 'type')
+        fields = ('id', 'user', 'email', 'mobile', 'code', 'kind')
 
 class Query(graphene.ObjectType):
     otps = graphene.List(OTPType)

@@ -28,8 +28,8 @@ class OTP(models.Model):
     email = models.EmailField(null=True, blank=True)
     mobile = models.CharField(max_length=10, null=True, blank=True)
     code = models.CharField(max_length=10)
-    type = models.CharField(choices=OTP_TYPE_CHOICES, max_length=50)
+    kind = models.CharField(choices=OTP_TYPE_CHOICES, max_length=50)
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.user) + ' - ' + self.type
+        return str(self.user) + ' - ' + self.kind
