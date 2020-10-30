@@ -20,4 +20,10 @@ class Query(graphene.ObjectType):
     def resolve_otps(root, info):
         return OTP.objects.select_related("user").all()
 
+    def resolve_users(root, info, email):
+        try:
+            return User.objects.get(email=email)
+        except User.DoesNotExist:
+            return None
+
 schema = graphene.Schema(query=Query)
