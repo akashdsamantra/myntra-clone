@@ -13,7 +13,7 @@ class ProductType(DjangoObjectType):
         model = Product
         fields = ('id', 'code', 'name', 'description', 'price', 'currency', 'discount', 'seller')
 
-class MyProductQuery(graphene.ObjectType):
+class Query(graphene.ObjectType):
     sellers = graphene.List(SellerType)
     products = graphene.List(ProductType)
 

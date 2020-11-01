@@ -13,7 +13,7 @@ class OTPType(DjangoObjectType):
         model = OTP
         fields = ('id', 'user', 'email', 'mobile', 'code', 'kind')
 
-class MyAuthQuery(graphene.ObjectType):
+class Query(graphene.ObjectType):
     otps = graphene.List(OTPType)
     users = graphene.Field(UserType, email=graphene.String(required=True))
 
