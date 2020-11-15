@@ -1,18 +1,14 @@
 <template>
-  <img alt="Vue logo" src="../../assets/logo.png" />
+    <div>
+        <p>Hello World</p>
+        <PageLoader text="Loading" />
+    </div>
 </template>
 
 <script>
+import PageLoader from "./components/PageLoader";
 
+export default {
+    components: { PageLoader }
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
